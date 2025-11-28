@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitVerse Gym Companion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'navy-dark': '#0D1117',
+            'navy-light': '#161B22',
+            'neon-gold': '#FFD700',
+            'silver-light': '#E6E6E6',
+            'silver-dark': '#8B949E',
+            'glass-border': 'rgba(255, 255, 255, 0.2)',
+          },
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            display: ['Orbitron', 'sans-serif'],
+          },
+          keyframes: {
+            glow: {
+              '0%, 100%': { boxShadow: '0 0 5px #FFD700' },
+              '50%': { boxShadow: '0 0 20px #FFD700, 0 0 30px #FFD700' },
+            },
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(10px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            glow: 'glow 2s ease-in-out infinite',
+            fadeIn: 'fadeIn 0.5s ease-out forwards',
+          },
+        },
+      },
+    }
+  </script>
+  <script>
+    window.onerror = function (message, source, lineno, colno, error) {
+      const errorDiv = document.createElement('div');
+      errorDiv.style.position = 'fixed';
+      errorDiv.style.top = '0';
+      errorDiv.style.left = '0';
+      errorDiv.style.width = '100%';
+      errorDiv.style.backgroundColor = 'red';
+      errorDiv.style.color = 'white';
+      errorDiv.style.padding = '20px';
+      errorDiv.style.zIndex = '9999';
+      errorDiv.style.wordBreak = 'break-all';
+      errorDiv.innerText = 'Error: ' + message + '\nSource: ' + source + ':' + lineno;
+      document.body.appendChild(errorDiv);
+      return false;
+    };
+  </script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
